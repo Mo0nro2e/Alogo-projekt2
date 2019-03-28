@@ -1,7 +1,7 @@
-public interface Dict {
 
-    void insert(int k);
-    int[] orderedTraversal();
-    boolean search(int k);
-
+public interface Dict 
+{
+	public void insert(int k);
+	public int[] orderedTraversal();
+	public boolean search(int k);
 }
