@@ -1,6 +1,9 @@
 
 public class DictBinTree implements Dict
 {
+	/**
+	*	innerklasse som holder information omkring hvert enkelt knude i træet.
+	*/
 	private static class Node
 	{
 		int value;
@@ -17,15 +20,23 @@ public class DictBinTree implements Dict
 	private static Node root;
 	private static int numberOfNodes;
 	
+	//Bliver brugt til orderedTraversel metoden
 	private int[] orderedArray;
 	private int orderedIndex;
 
+	/**
+	*	Constructor
+	*/
 	public DictBinTree()
 	{
 		root = null;
 		numberOfNodes = 0;
 	}
 
+	/**
+	*	Pseudokoden for indsættelse af knude i træet. 
+	*	Desuden holder vi styr på mængden af knuder i træet.
+	*/
 	@Override
 	public void insert(int k) 
 	{
@@ -51,6 +62,10 @@ public class DictBinTree implements Dict
 		numberOfNodes++;
 	}
 
+	/**
+	*	Initialiserer arrayet (attributten) og kalder traversal på root, 
+	*   og til sidst returnerer arrayet, efter det er blivet fyldt af traversal metoden.
+	*/
 	@Override
 	public int[] orderedTraversal() 
 	{			
@@ -60,6 +75,9 @@ public class DictBinTree implements Dict
 		return orderedArray;
 	}
 
+	/**
+	*	Inorder-tree-walk algoritmen. Indsætter noden i et array som er en attribut. Rekursiv
+	*/
 	public void traversal(Node x)
 	{
 		if(x != null)
@@ -71,13 +89,19 @@ public class DictBinTree implements Dict
 		}
 	}
 
+	/**
+	*  Bruger implementeringen af søgning på kalder den på root-knuden.
+	*/
 	@Override
 	public boolean search(int k) 
 	{	
 		return search(k, root);
 	}
 
-	public boolean search(int k, Node x)
+	/**
+	*	Implementering af pseudokode. 
+	*/
+	private boolean search(int k, Node x)
 	{
 		if (x == null)
 			return false;
