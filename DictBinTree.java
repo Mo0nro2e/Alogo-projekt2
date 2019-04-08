@@ -18,7 +18,7 @@ public class DictBinTree implements Dict
 	}
 	
 	private static Node root;
-	private static int numberOfNodes;
+	private int numberOfNodes;
 	
 	//Bliver brugt til orderedTraversel metoden
 	private int[] orderedArray;
@@ -78,7 +78,7 @@ public class DictBinTree implements Dict
 	/**
 	*	Inorder-tree-walk algoritmen. Indsætter noden i et array som er en attribut. Rekursiv
 	*/
-	public void traversal(Node x)
+	private void traversal(Node x)
 	{
 		if(x != null)
 		{
@@ -90,7 +90,7 @@ public class DictBinTree implements Dict
 	}
 
 	/**
-	*  Bruger implementeringen af søgning på kalder den på root-knuden.
+	*  Bruger implementeringen af søgning og kalder den på root-knuden.
 	*/
 	@Override
 	public boolean search(int k) 
